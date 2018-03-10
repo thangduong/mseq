@@ -1,0 +1,332 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "createbcplut"=.\createbcplut\createbcplut.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "detectpeaks"=.\detectpeaks\detectpeaks.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "digdetectedge"=.\digdetectedge\digdetectedge.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "doc"=.\doc\doc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "fastsimresponse"=.\fastsimresponse\fastsimresponse.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "fastwalsh"=.\fastwalsh\fastwalsh.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "findmseqseed"=.\findmseqseed\findmseqseed.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "genmseq"=.\genmseq\genmseq.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "genregmseq"=.\genregmseq\genregmseq.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gridprewalshperm"=.\gridprewalshperm\gridprewalshperm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "matlabaux"=.\matlabaux\matlabaux.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mexmseqfindprod"=.\mexmseqfindprod\mexmseqfindprod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mseqmult"=.\mseqmult\mseqmult.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "nmfastwalsh"=.\nmfastwalsh\nmfastwalsh.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "nmpostwalshperm"=.\nmpostwalshperm\nmpostwalshperm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "nmprewalshperm"=.\nmprewalshperm\nmprewalshperm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "perfdump"=.\perfdump\perfdump.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "postwalshperm"=.\postwalshperm\postwalshperm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "prewalshperm"=.\prewalshperm\prewalshperm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "rotatevector"=.\rotatevector\rotatevector.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "simpleresample"=.\simpleresample\simpleresample.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "slowseqp"=.\slowseqp\slowseqp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name matlabaux
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "xcorrdirect"=.\xcorrdirect\xcorrdirect.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

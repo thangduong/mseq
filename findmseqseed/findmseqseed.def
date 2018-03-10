@@ -1,0 +1,2 @@
+LIBRARY SLOWSEQP.DLL
+EXPORTS mexFunction 

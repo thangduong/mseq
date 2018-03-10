@@ -1,0 +1,2 @@
+LIBRARY GENMSEQ.DLL
+EXPORTS mexFunction 

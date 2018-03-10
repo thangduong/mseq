@@ -1,0 +1,2 @@
+LIBRARY PERFDUMP.DLL
+EXPORTS mexFunction 
