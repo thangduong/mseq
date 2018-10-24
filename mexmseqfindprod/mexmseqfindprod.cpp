@@ -45,8 +45,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
 
 		uint32_t nprods = max(mxGetM(prhs[2]), mxGetN(prhs[3]));
 
-		long* prod1 = (long*)mxGetData(prhs[2]);
-		long* prod2 = (long*)mxGetData(prhs[3]);
+		int32_t* prod1 = (int32_t*)mxGetData(prhs[2]);
+		int32_t* prod2 = (int32_t*)mxGetData(prhs[3]);
 
 		uint32_t* prod1v = new uint32_t[nprods];
 		uint32_t* prod2v = new uint32_t[nprods];

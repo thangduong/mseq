@@ -144,7 +144,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 			case 2:
 				MSeqGenRegOutput(nbits, seed, (1<<nbits), 1, plhs[0], repeat);
 				{
-					long* v = (long*)mxGetData(plhs[0]);
+					int32_t* v = (int32_t*)mxGetData(plhs[0]);
 					for (uint32_t i = 0; i < dim[1]; i++)
 					{
 						(*v) = 1-(*v) * 2;

@@ -83,7 +83,7 @@ void fastwalsh(short* vector, int N, int blocksize)
 	}
 }
 
-void fastwalsh(long* vector, int N, int blocksize)
+void fastwalsh(int32_t* vector, int N, int blocksize)
 {
 	// vector is a vector of 2^N elements
 	int i, j, k;
@@ -98,8 +98,8 @@ void fastwalsh(long* vector, int N, int blocksize)
 			{
 				for (k = 0; k < blocksize; k++)
 				{
-					long item1 = vector[(2 * j * stridelen + i)*blocksize+k];
-					long item2 = vector[(2 * j * stridelen + i + stridelen)*blocksize+k];
+					int32_t item1 = vector[(2 * j * stridelen + i)*blocksize+k];
+					int32_t item2 = vector[(2 * j * stridelen + i + stridelen)*blocksize+k];
 					vector[(2 * j * stridelen + i)*blocksize+k] = item1 + item2;
 					vector[(2 * j * stridelen + i + stridelen)*blocksize+k] = item1 - item2;
 				}
@@ -175,8 +175,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
 				break;
 			case mxINT32_CLASS:
 				plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxINT32_CLASS, mxREAL);
-				memcpy(mxGetData(plhs[0]), mxGetData(prhs[1]), dim[0] * sizeof(long));
-				fastwalsh((long*)mxGetData(plhs[0]), N, blocksize);
+				memcpy(mxGetData(plhs[0]), mxGetData(prhs[1]), dim[0] * sizeof(int32_t));
+				fastwalsh((int32_t*)mxGetData(plhs[0]), N, blocksize);
 				break;
 			default:
 				printf("you need to pass in an array of either double, int16, or int32\n");

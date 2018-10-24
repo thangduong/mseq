@@ -117,8 +117,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
 				break;
 			case mxINT32_CLASS:
 				plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxINT32_CLASS, mxREAL);
-				memcpy(mxGetData(plhs[0]), mxGetData(prhs[1]), dim[0] * sizeof(long));
-				nmfastwalsh((long*)mxGetData(plhs[0]), N, blocksize);
+				memcpy(mxGetData(plhs[0]), mxGetData(prhs[1]), dim[0] * sizeof(int32_t));
+				nmfastwalsh((int32_t*)mxGetData(plhs[0]), N, blocksize);
 				break;
 			default:
 				printf("you need to pass in an array of either double, int16, or int32\n");

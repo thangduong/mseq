@@ -19,7 +19,7 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 // to be of the same size as stimulus.
 //
 template<class TYPE>
-void fastSimResponse(TYPE* kernel, long kernelSize, TYPE* stimulus, long stimSize,
+void fastSimResponse(TYPE* kernel, int32_t kernelSize, TYPE* stimulus, int32_t stimSize,
 					 TYPE* response)
 {
 	int i,j;
@@ -74,9 +74,9 @@ void mexFunction(int nlhs, mxArray *plhs[],
 				break;
 			case mxINT32_CLASS:
 				plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxINT32_CLASS, mxREAL);
-				fastSimResponse((long*)mxGetData(prhs[0]), mxGetNumberOfElements(prhs[0]), 
-					(long*)mxGetData(prhs[1]), mxGetNumberOfElements(prhs[1]), 
-					(long*)mxGetData(plhs[0]));
+				fastSimResponse((int32_t*)mxGetData(prhs[0]), mxGetNumberOfElements(prhs[0]), 
+					(int32_t*)mxGetData(prhs[1]), mxGetNumberOfElements(prhs[1]), 
+					(int32_t*)mxGetData(plhs[0]));
 				break;
 			default:
 				printf("you need to pass in an array of either double, int16, or int32\n");

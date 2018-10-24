@@ -36,7 +36,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		uint32_t kernel_order_minus_one = mxGetNumberOfElements(prhs[2]);
 
 		// there is probably a nice way to figure this out, but 
-		// i am just going to brute force it since it doesn't take very long
+		// i am just going to brute force it since it doesn't take very int32_t
 		// and i am kinda tired.
 
 		uint32_t pattern = 1;
@@ -44,11 +44,11 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		uint32_t reg1 = 1, reg2;
 		uint32_t size = 1 << order;
 
-		long* deltas = new long[kernel_order_minus_one];
+		int32_t* deltas = new int32_t[kernel_order_minus_one];
 		// shift everything forward so i won't have to cycle through the m-seq to search
 		// for patterns to mask
 		int i, j;
-		long min = maGetINT32Element(prhs[2], 0);
+		int32_t min = maGetINT32Element(prhs[2], 0);
 		for (i = 1; i < kernel_order_minus_one; i++)
 		{
 			deltas[i] = maGetINT32Element(prhs[2], i);

@@ -14,7 +14,7 @@
 
 
 // Defintions to turn on some heuristics.  The best way is, of course, to curve fit the decay
-// characteristics of the phosphorus, but that'll take too long, so some heuristics will have to do!
+// characteristics of the phosphorus, but that'll take too int32_t, so some heuristics will have to do!
 #define	REMOVE_DOUBLEPEAKS					// If this is defined, it tries to remove double peaks
 											// by checking to see if two peaks are too close to each other
 #define	MIN_PEAK_INTERVAL		10			// (i.e. close than MIN_PEAK_INTERVAL)

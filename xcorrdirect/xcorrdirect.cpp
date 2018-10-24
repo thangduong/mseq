@@ -84,8 +84,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
 					mxGetNumberOfElements(prhs[1]), mxGetNumberOfElements(plhs[0]));
 				break;
 			case mxINT32_CLASS:
-				CircularCrossCorrelation((long*)mxGetData(prhs[0]),(long*)mxGetData(prhs[1]),
-					(long*)mxGetData(plhs[0]), mxGetNumberOfElements(prhs[0]), 
+				CircularCrossCorrelation((int32_t*)mxGetData(prhs[0]),(int32_t*)mxGetData(prhs[1]),
+					(int32_t*)mxGetData(plhs[0]), mxGetNumberOfElements(prhs[0]), 
 					mxGetNumberOfElements(prhs[1]), mxGetNumberOfElements(plhs[0]));
 				break;
 			default:
