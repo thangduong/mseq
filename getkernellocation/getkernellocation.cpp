@@ -110,7 +110,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 
 
 		// result is i + min
-		int dim[] = {1, 1};
+		mwSize dim[] = {1, 1};
 		plhs[0] = mxCreateNumericArray(2,dim,mxDOUBLE_CLASS,mxREAL);
 
 		double* pResult = (double*)mxGetData(plhs[0]);

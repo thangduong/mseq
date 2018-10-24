@@ -91,7 +91,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	else
 	{
 		int N = maGetUINT32Element(prhs[0], 0);
-		int dim[2] = { (1<<N)-1, 1};
+		mwSize dim[2] = { (1<<N)-1, 1};
 		int blocksize = (mxGetNumberOfElements(prhs[1])) / dim[0];
 	
 		if (mxGetNumberOfElements(prhs[1]) != dim[0]*blocksize)

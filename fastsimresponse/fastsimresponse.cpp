@@ -55,7 +55,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		}
 		else
 		{
-			int dim[2] = { mxGetNumberOfElements(prhs[1]), 1};
+			mwSize dim[2] = { mxGetNumberOfElements(prhs[1]), 1};
 			// call a the appropriate C function depending on the type of the array we got
 			// from matlab.
 			switch(mxGetClassID(prhs[0]))

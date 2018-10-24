@@ -182,7 +182,7 @@ mxArray* DetectPeaksDouble(const mxArray* pArray)
 
 	// copy our temporary arrays over to Matlab's array, delete our temporary array,
 	// and return.
-	int dim[2] = {ulNumPeaks, 2};
+	mwSize dim[2] = {ulNumPeaks, 2};
 	mxArray* pResult = mxCreateNumericArray(sizeof(dim)/sizeof(dim[0]),dim,mxDOUBLE_CLASS,mxREAL);
 	double* pResultData = (double*)mxGetData(pResult);
 	memcpy(pResultData, pTempTimeStamps, ulNumPeaks * sizeof(double));

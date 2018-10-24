@@ -53,10 +53,16 @@ curdir = pwd;
 if (length(files) == 0)
     disp(['compiling ' num2str(length(mexfiles)) ' MEX files...']);
     for i=1:length(mexfiles)
-        cmd = ['mex -DCOMPILE_IN_MATLAB -I' curdir '/matlabaux ' curdir '/matlabaux/matlabaux.cpp -outdir ' curdir '/mseq -output ' mexfiles{i}{2}];
+	if (isoctave() == 1)
+        	cmd = ['mex -DCOMPILE_IN_MATLAB -I' curdir '/matlabaux -I' curdir '/matlabaux/octave ' curdir '/matlabaux/matlabaux.cpp -o ' curdir '/mseq/' mexfiles{i}{2}];
+	else
+        	cmd = ['mex -DCOMPILE_IN_MATLAB -I' curdir '/matlabaux ' curdir '/matlabaux/matlabaux.cpp -outdir ' curdir '/mseq -output ' mexfiles{i}{2}];
+	end
         for j=3:length(mexfiles{i})
             cmd = [cmd ' ' curdir '/' mexfiles{i}{2} '/' mexfiles{i}{j}];
         end
+%	disp(cmd);
+%	return;
         if (length(mexfiles{i}{1}))
             disp(['compiling : ' mexfiles{i}{2} ' - ' mexfiles{i}{1}]);
         else
@@ -73,6 +79,7 @@ else
                 for j=3:length(mexfiles{i})
                     cmd = [cmd ' ' curdir '/' mexfiles{i}{2} '/' mexfiles{i}{j}];
                 end
+		disp(cmd);
                 if (length(mexfiles{i}{1}))
                     disp(['compiling : ' mexfiles{i}{2} ' - ' mexfiles{i}{1}]);
                 else

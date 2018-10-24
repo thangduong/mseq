@@ -51,7 +51,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		unsigned long* prod1v = new unsigned long[nprods];
 		unsigned long* prod2v = new unsigned long[nprods];
 		unsigned long* searchv = new unsigned long[nprods];
-		int dim[2] = { nprods, 1};	
+		mwSize dim[2] = { nprods, 1};	
 		plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxUINT32_CLASS, mxREAL);
 		unsigned long* foundindex = (unsigned long*)mxGetData(plhs[0]);
 		int i;

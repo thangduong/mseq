@@ -69,7 +69,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		mxClassID param1type = (mxGetClassID(prhs[1]));
 		if (param0type == param1type)
 		{
-			int dim[2] = {1, max(mxGetNumberOfElements(prhs[0]), mxGetNumberOfElements(prhs[1])) };
+			mwSize dim[2] = {1, max(mxGetNumberOfElements(prhs[0]), mxGetNumberOfElements(prhs[1])) };
 			plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, param0type, mxREAL);
 			switch(param0type)
 			{

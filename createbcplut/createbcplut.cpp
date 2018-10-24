@@ -39,7 +39,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	{
 		unsigned long order;
 		order = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));
-		int dim[2] = { 1<<order, 1};
+		mwSize dim[2] = { 1<<order, 1};
 		plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxUINT32_CLASS, mxREAL);
 		unsigned long* newbit = (unsigned long*)mxGetData(plhs[0]);
 

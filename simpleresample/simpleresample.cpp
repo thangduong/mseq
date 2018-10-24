@@ -46,7 +46,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		double* indata = (double*)mxGetData(prhs[0]);
 		unsigned long cnt = mxGetNumberOfElements(prhs[0]);
 
-		int dim[2] = {newlength, 1};
+		mwSize dim[2] = {newlength, 1};
 		plhs[0] = mxCreateNumericArray(2, dim, mxDOUBLE_CLASS, mxREAL);
 		double* outdata = (double*)mxGetData(plhs[0]);
 

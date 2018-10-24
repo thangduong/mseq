@@ -27,7 +27,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	else
 	{
 		unsigned long nbits;
-		int dim[2] = { 1, 1};
+		mwSize dim[2] = { 1, 1};
 
 		nbits = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));
 		dim[0] = (1<<nbits);

@@ -105,7 +105,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		unsigned long nbits;
 		unsigned long seed;
 		unsigned long repeat = 1;
-		int dim[2] = { 1, 1};
+		mwSize dim[2] = { 1, 1};
 
 		// assume unsigned long input! (TODO: fix this!)
 		nbits = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));

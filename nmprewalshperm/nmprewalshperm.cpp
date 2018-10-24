@@ -42,7 +42,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	{
 		int order = maGetUINT32Element(prhs[0], 0);
 		int seed = maGetUINT32Element(prhs[1], 0);
-		int dim[2] = { (1<<order)-1, 1};
+		mwSize dim[2] = { (1<<order)-1, 1};
 		int i;
 		unsigned long reg1 = 1;
 		unsigned long reg2;
