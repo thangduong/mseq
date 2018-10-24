@@ -4,8 +4,10 @@
 
 #include "mex.h"
 #include "matrix.h"
-#include <inttypes.h>
 #include <memory.h>
+
+typedef int int32_t;
+typedef unsigned int uint32_t;
 
 // The following ifdef block is the standard way of creating macros which make exporting 
 // from a DLL simpler. All files within this DLL are compiled with the MATLABAUX_EXPORTS
@@ -25,9 +27,9 @@
 
 
 
-MATLABAUX_API unsigned long maGetUINT32Element(const mxArray* pArray, unsigned long index);
-MATLABAUX_API double maGetDoubleElement(const mxArray* pArray, unsigned long index);
-MATLABAUX_API long maGetINT32Element(const mxArray* pArray, long index);
+MATLABAUX_API uint32_t maGetUINT32Element(const mxArray* pArray, uint32_t index);
+MATLABAUX_API double maGetDoubleElement(const mxArray* pArray, uint32_t index);
+MATLABAUX_API int32_t maGetINT32Element(const mxArray* pArray, int32_t index);
 
 
 #endif

@@ -1,7 +1,6 @@
 #include "mex.h"
 #include "matrix.h"
 #include "matlabaux.h"
-#include <inttypes.h>
 #ifdef _WIN32
 #include <windows.h>
 
