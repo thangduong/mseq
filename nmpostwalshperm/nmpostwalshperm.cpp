@@ -50,14 +50,14 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		int seed = maGetUINT32Element(prhs[1], 0);
 		mwSize dim[2] = { (1<<order)-1, 1};
 		int i;
-		unsigned long datasize = mxGetM(prhs[2]) * mxGetN(prhs[2]);
+		uint32_t datasize = mxGetM(prhs[2]) * mxGetN(prhs[2]);
 		int elementsize;
 		char* result;
 		char* indata;
 		elementsize = datasize / dim[0];
 
 #ifdef ERROR_CHECK
-		if (datasize != (unsigned long)(dim[0]*elementsize))
+		if (datasize != (uint32_t)(dim[0]*elementsize))
 		{
 			mexErrMsgTxt("invalid parameter.  data needs to have k*2^order elements for integer k.");
 			return;
@@ -71,10 +71,10 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		result = (char*)mxGetData(plhs[0]);
 		indata = (char*)mxGetData(prhs[2]);
 
-		unsigned long reg1 = 1;
-		unsigned long reg2 = seed;
-		unsigned long np1bitmask = dim[0] + 1;
-		unsigned long outputmask = dim[0];
+		uint32_t reg1 = 1;
+		uint32_t reg2 = seed;
+		uint32_t np1bitmask = dim[0] + 1;
+		uint32_t outputmask = dim[0];
 
 		// the first element stays the same
 //		memcpy(result, indata, elementsize);

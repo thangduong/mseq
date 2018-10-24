@@ -31,13 +31,13 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 
 
 template<class T1, class T2, class T3>
-void CircularCrossCorrelation(T1* x1, T2* x2, T3* result, unsigned long N1, unsigned long N2, unsigned long N)
+void CircularCrossCorrelation(T1* x1, T2* x2, T3* result, uint32_t N1, uint32_t N2, uint32_t N)
 {
 	// result = x1 cross x2
 	// N1 = size of x1, N2 = size of x2, N = size of result
 	//
 	printf("cross correlating sequence of size %d and %d to a seq of size %d\n", N1, N2, N);
-	unsigned long Nmax = max(N1, N2);
+	uint32_t Nmax = max(N1, N2);
 	for (int i = 0; i < N; i++)
 	{
 		T3 sum = 0;

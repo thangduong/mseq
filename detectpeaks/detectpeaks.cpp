@@ -67,14 +67,14 @@ mxArray* DetectPeaksDouble(const mxArray* pArray)
 	// Passing anything else in can give unpredictable results!
 
 	double* pData = (double*)mxGetData(pArray);
-	unsigned long ulDataSize = (unsigned long)(mxGetM(pArray)*mxGetN(pArray));
+	uint32_t ulDataSize = (uint32_t)(mxGetM(pArray)*mxGetN(pArray));
 	double FirstOrderDifference[2] = { 0, pData[1] - pData[0]};
 	double SecondOrderDifference;
 	double TimeStamp, PeakValue;
 	double *pTempTimeStamps, *pTempPeaks;
 	pTempTimeStamps = new double[ulDataSize / 2];
 	pTempPeaks = new double[ulDataSize/2];
-	unsigned long ulNumPeaks = 0;
+	uint32_t ulNumPeaks = 0;
 #ifdef _DEBUG
 	double dbgFOD[2];
 	double dbgSOD;

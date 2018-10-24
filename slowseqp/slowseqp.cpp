@@ -31,25 +31,25 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long nbits;
-		unsigned long* result;
-		unsigned long seed;
+		uint32_t nbits;
+		uint32_t* result;
+		uint32_t seed;
 		mwSize dim[2] = { 1, 1};
 
-		// assume unsigned long input! (TODO: fix this!)
-		nbits = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));
-		seed  = maGetUINT32Element(prhs[1], 0); //*((unsigned long*)mxGetData(prhs[1]));
+		// assume uint32_t input! (TODO: fix this!)
+		nbits = maGetUINT32Element(prhs[0], 0); //*((uint32_t*)mxGetData(prhs[0]));
+		seed  = maGetUINT32Element(prhs[1], 0); //*((uint32_t*)mxGetData(prhs[1]));
 
 		// create result array
 		dim[1] = (1<<nbits)-1;
 		plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxUINT32_CLASS, mxREAL);
 
-		result = (unsigned long*)mxGetData(plhs[0]);
+		result = (uint32_t*)mxGetData(plhs[0]);
 
-		unsigned long reg1 = 1;
-		unsigned long reg2 = seed;
-		unsigned long np1bitmask = dim[1]+1;
-		unsigned long outputmask = dim[1];
+		uint32_t reg1 = 1;
+		uint32_t reg2 = seed;
+		uint32_t np1bitmask = dim[1]+1;
+		uint32_t outputmask = dim[1];
 
 		// use Sutter's tap register method
 		// see Sutter's section in (Marmarelis 1987, Vol I)

@@ -37,23 +37,23 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long nbits;
-		unsigned long* mseq = (unsigned long*)mxGetData(prhs[1]);
-		nbits = *((unsigned long*)mxGetData(prhs[0]));
+		uint32_t nbits;
+		uint32_t* mseq = (uint32_t*)mxGetData(prhs[1]);
+		nbits = *((uint32_t*)mxGetData(prhs[0]));
 
-		unsigned long nelt = (1<<nbits);
+		uint32_t nelt = (1<<nbits);
 
-		unsigned long nprods = max(mxGetM(prhs[2]), mxGetN(prhs[3]));
+		uint32_t nprods = max(mxGetM(prhs[2]), mxGetN(prhs[3]));
 
 		long* prod1 = (long*)mxGetData(prhs[2]);
 		long* prod2 = (long*)mxGetData(prhs[3]);
 
-		unsigned long* prod1v = new unsigned long[nprods];
-		unsigned long* prod2v = new unsigned long[nprods];
-		unsigned long* searchv = new unsigned long[nprods];
+		uint32_t* prod1v = new uint32_t[nprods];
+		uint32_t* prod2v = new uint32_t[nprods];
+		uint32_t* searchv = new uint32_t[nprods];
 		mwSize dim[2] = { nprods, 1};	
 		plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxUINT32_CLASS, mxREAL);
-		unsigned long* foundindex = (unsigned long*)mxGetData(plhs[0]);
+		uint32_t* foundindex = (uint32_t*)mxGetData(plhs[0]);
 		int i;
 
 		// generate new starting points by XORing starting points of x(t+t1) and x(t+t2)

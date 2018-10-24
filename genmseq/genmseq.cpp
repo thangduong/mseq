@@ -24,23 +24,23 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 }
 #endif
 
-void MSeqGenRegOutput(unsigned long nbits, unsigned long seed, unsigned long size, unsigned long outputmask, mxArray* gen, unsigned long repeat)
+void MSeqGenRegOutput(uint32_t nbits, uint32_t seed, uint32_t size, uint32_t outputmask, mxArray* gen, uint32_t repeat)
 {
-	unsigned long* result;
-	unsigned long i;
-//	unsigned long outputmask = size - 1;	
-	unsigned long reg1 = 1;
-	unsigned long reg2;
-	unsigned long j;
+	uint32_t* result;
+	uint32_t i;
+//	uint32_t outputmask = size - 1;	
+	uint32_t reg1 = 1;
+	uint32_t reg2;
+	uint32_t j;
 	//  generating register method
 		
-	result = (unsigned long*)mxGetData(gen);
+	result = (uint32_t*)mxGetData(gen);
 	
 	// bit counter! -- TODO: use permanent lookup table for this!
-	unsigned long* newbit = new unsigned long[size];
+	uint32_t* newbit = new uint32_t[size];
 	for (i = 0; i < size; i++)
 	{
-		unsigned long j;	
+		uint32_t j;	
 		newbit[i] = 0;
 		for (j = 0; j < nbits; j++)
 			newbit[i] += ((1<<j)&i) ? 1 : 0;
@@ -62,20 +62,20 @@ void MSeqGenRegOutput(unsigned long nbits, unsigned long seed, unsigned long siz
 
 	delete [] newbit;
 }
-void MSeqTapRegOutput(unsigned long nbits, unsigned long seed, unsigned long size, unsigned long outputmask, mxArray* tap, unsigned long repeat)
+void MSeqTapRegOutput(uint32_t nbits, uint32_t seed, uint32_t size, uint32_t outputmask, mxArray* tap, uint32_t repeat)
 {
-	unsigned long* result;
-	result = (unsigned long*)mxGetData(tap);
+	uint32_t* result;
+	result = (uint32_t*)mxGetData(tap);
 	
-	unsigned long reg1 = 1;
-	unsigned long reg2 = seed;
-	unsigned long np1bitmask = size;
-	unsigned long j;
-//	unsigned long outputmask = size - 1;
+	uint32_t reg1 = 1;
+	uint32_t reg2 = seed;
+	uint32_t np1bitmask = size;
+	uint32_t j;
+//	uint32_t outputmask = size - 1;
 	
 	// use Sutter's tap register method
 	// see Sutter's section in (Marmarelis 1987, Vol I)
-	for (unsigned long i = 0; i < size-1; i++)
+	for (uint32_t i = 0; i < size-1; i++)
 	{
 		(*result) = (reg1 & outputmask); result++;
 		for (j = 1; j < repeat; j++)
@@ -101,15 +101,15 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long option = 0;
-		unsigned long nbits;
-		unsigned long seed;
-		unsigned long repeat = 1;
+		uint32_t option = 0;
+		uint32_t nbits;
+		uint32_t seed;
+		uint32_t repeat = 1;
 		mwSize dim[2] = { 1, 1};
 
-		// assume unsigned long input! (TODO: fix this!)
-		nbits = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));
-		seed  = maGetUINT32Element(prhs[1], 0); //*((unsigned long*)mxGetData(prhs[1]));
+		// assume uint32_t input! (TODO: fix this!)
+		nbits = maGetUINT32Element(prhs[0], 0); //*((uint32_t*)mxGetData(prhs[0]));
+		seed  = maGetUINT32Element(prhs[1], 0); //*((uint32_t*)mxGetData(prhs[1]));
 
 		if (nrhs > 2)
 			option = maGetUINT32Element(prhs[2], 0);
@@ -145,7 +145,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 				MSeqGenRegOutput(nbits, seed, (1<<nbits), 1, plhs[0], repeat);
 				{
 					long* v = (long*)mxGetData(plhs[0]);
-					for (unsigned long i = 0; i < dim[1]; i++)
+					for (uint32_t i = 0; i < dim[1]; i++)
 					{
 						(*v) = 1-(*v) * 2;
 						v++;

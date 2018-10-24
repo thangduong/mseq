@@ -27,43 +27,43 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 #define	__int64 long
 #endif
 
-MATLABAUX_API unsigned long maGetUINT32Element(const mxArray* pArray, unsigned long index)
+MATLABAUX_API uint32_t maGetUINT32Element(const mxArray* pArray, uint32_t index)
 {
-	unsigned long result;
+	uint32_t result;
 	switch(mxGetClassID(pArray))
 	{
 	case mxDOUBLE_CLASS: 
-		result = (unsigned long)(((double*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((double*)mxGetData(pArray))[index]);
 		break;
 	case mxSINGLE_CLASS: 
-		result = (unsigned long)(((float*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((float*)mxGetData(pArray))[index]);
 		break;
 	case mxINT8_CLASS: 
-		result = (unsigned long)(((char*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((char*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT8_CLASS: 
-		result = (unsigned long)(((unsigned char*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((unsigned char*)mxGetData(pArray))[index]);
 		break;
 	case mxINT16_CLASS: 
-		result = (unsigned long)(((short*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((short*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT16_CLASS: 
-		result = (unsigned long)(((unsigned short*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((unsigned short*)mxGetData(pArray))[index]);
 		break;
 	case mxINT32_CLASS: 
-		result = (unsigned long)(((long*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((long*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT32_CLASS: 
-		result = (unsigned long)(((unsigned long*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((uint32_t*)mxGetData(pArray))[index]);
 		break;
 	case mxINT64_CLASS: 
-		result = (unsigned long)(((__int64*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((__int64*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT64_CLASS: 
-		result = (unsigned long)(((unsigned __int64*)mxGetData(pArray))[index]);
+		result = (uint32_t)(((unsigned __int64*)mxGetData(pArray))[index]);
 		break;
 	default:
-		result = (unsigned long)-1;
+		result = (uint32_t)-1;
 		break;
 	}
 	return result;
@@ -96,7 +96,7 @@ MATLABAUX_API long maGetINT32Element(const mxArray* pArray, long index)
 		result = (long)(((long*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT32_CLASS: 
-		result = (long)(((unsigned long*)mxGetData(pArray))[index]);
+		result = (long)(((uint32_t*)mxGetData(pArray))[index]);
 		break;
 	case mxINT64_CLASS: 
 		result = (long)(((__int64*)mxGetData(pArray))[index]);
@@ -105,13 +105,13 @@ MATLABAUX_API long maGetINT32Element(const mxArray* pArray, long index)
 		result = (long)(((unsigned __int64*)mxGetData(pArray))[index]);
 		break;
 	default:
-		result = (unsigned long)-1;
+		result = (uint32_t)-1;
 		break;
 	}
 	return result;
 }
 
-MATLABAUX_API double maGetDoubleElement(const mxArray* pArray, unsigned long index)
+MATLABAUX_API double maGetDoubleElement(const mxArray* pArray, uint32_t index)
 {
 	double result;
 	switch(mxGetClassID(pArray))
@@ -138,16 +138,16 @@ MATLABAUX_API double maGetDoubleElement(const mxArray* pArray, unsigned long ind
 		result = (double)(((long*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT32_CLASS: 
-		result = (double)(((unsigned long*)mxGetData(pArray))[index]);
+		result = (double)(((uint32_t*)mxGetData(pArray))[index]);
 		break;
 	case mxINT64_CLASS: 
 		result = (double)(((__int64*)mxGetData(pArray))[index]);
 		break;
 	case mxUINT64_CLASS: 
-		result = (double)((unsigned long)(((unsigned __int64*)mxGetData(pArray))[index]));
+		result = (double)((uint32_t)(((unsigned __int64*)mxGetData(pArray))[index]));
 		break;
 	default:
-		result = (unsigned long)-1;
+		result = (uint32_t)-1;
 		break;
 	}
 	return result;

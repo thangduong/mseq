@@ -27,7 +27,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	else
 	{
 		long amount = maGetINT32Element(prhs[1], 0);
-		unsigned long elementsize = mxGetElementSize(prhs[0]);
+		uint32_t elementsize = mxGetElementSize(prhs[0]);
 		char* indata = (char*)mxGetData(prhs[0]);
 		int elementcount = mxGetNumberOfElements(prhs[0]);
 

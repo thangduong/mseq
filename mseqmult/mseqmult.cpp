@@ -24,11 +24,11 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long nbits;
-		unsigned long* mseq = (unsigned long*)mxGetData(prhs[1]);
+		uint32_t nbits;
+		uint32_t* mseq = (uint32_t*)mxGetData(prhs[1]);
 		nbits = maGetUINT32Element(prhs[0], 0);
 
-		unsigned long nelt = (1<<nbits);
+		uint32_t nelt = (1<<nbits);
 		
 	}
 }

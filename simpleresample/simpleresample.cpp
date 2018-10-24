@@ -42,9 +42,9 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long newlength = maGetUINT32Element(prhs[1], 0);
+		uint32_t newlength = maGetUINT32Element(prhs[1], 0);
 		double* indata = (double*)mxGetData(prhs[0]);
-		unsigned long cnt = mxGetNumberOfElements(prhs[0]);
+		uint32_t cnt = mxGetNumberOfElements(prhs[0]);
 
 		mwSize dim[2] = {newlength, 1};
 		plhs[0] = mxCreateNumericArray(2, dim, mxDOUBLE_CLASS, mxREAL);

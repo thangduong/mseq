@@ -44,15 +44,15 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		int seed = maGetUINT32Element(prhs[1], 0);
 		mwSize dim[2] = { (1<<order)-1, 1};
 		int i;
-		unsigned long reg1 = 1;
-		unsigned long reg2;
-		unsigned long datasize = mxGetM(prhs[2]) * mxGetN(prhs[2]);
+		uint32_t reg1 = 1;
+		uint32_t reg2;
+		uint32_t datasize = mxGetM(prhs[2]) * mxGetN(prhs[2]);
 		int elementsize;
 		char* result;
 		char* indata;
 		elementsize = datasize / dim[0];
 #ifdef ERROR_CHECK
-		if (datasize != (unsigned long)(dim[0]*elementsize))
+		if (datasize != (uint32_t)(dim[0]*elementsize))
 		{
 			mexErrMsgTxt("invalid parameter.  data needs to have k*2^order - 1 elements for integer k.");
 			return;
@@ -66,14 +66,14 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		result = (char*)mxGetData(plhs[0]);
 		indata = (char*)mxGetData(prhs[2]);
 
-		unsigned long* newbit = NULL;
+		uint32_t* newbit = NULL;
 
 		// if look up table is available in parameter, then use it
 		if (nrhs >= 4)
-			newbit = (unsigned long*)mxGetData(prhs[3]);
+			newbit = (uint32_t*)mxGetData(prhs[3]);
 		else // if not available, then create it
 		{
-			newbit = new unsigned long[dim[0]];
+			newbit = new uint32_t[dim[0]];
 			for (i = 0; i < dim[0]; i++)
 			{
 				int j;	
@@ -89,7 +89,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 		// then do the pre walsh transform permutation as
 		// specified in Sutter's SIAM paper.
 		reg1 = 1;
-		unsigned long outputmask = dim[0];
+		uint32_t outputmask = dim[0];
 
 		// the first element stays the same
 //		memcpy(result, indata, elementsize);

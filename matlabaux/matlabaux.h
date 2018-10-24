@@ -4,6 +4,7 @@
 
 #include "mex.h"
 #include "matrix.h"
+#include <inttypes.h>
 #include <memory.h>
 
 // The following ifdef block is the standard way of creating macros which make exporting 

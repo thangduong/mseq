@@ -37,11 +37,11 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long order;
-		order = maGetUINT32Element(prhs[0], 0); //*((unsigned long*)mxGetData(prhs[0]));
+		uint32_t order;
+		order = maGetUINT32Element(prhs[0], 0); //*((uint32_t*)mxGetData(prhs[0]));
 		mwSize dim[2] = { 1<<order, 1};
 		plhs[0] = mxCreateNumericArray(sizeof(dim) / sizeof(dim[0]), dim, mxUINT32_CLASS, mxREAL);
-		unsigned long* newbit = (unsigned long*)mxGetData(plhs[0]);
+		uint32_t* newbit = (uint32_t*)mxGetData(plhs[0]);
 
 		// create the bit count parity table
 		for (int i = 0; i < dim[0]; i++)

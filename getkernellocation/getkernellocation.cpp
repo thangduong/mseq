@@ -31,18 +31,18 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	}
 	else
 	{
-		unsigned long order = maGetUINT32Element(prhs[0], 0);
-		unsigned long seed = maGetUINT32Element(prhs[1], 0);
-		unsigned long kernel_order_minus_one = mxGetNumberOfElements(prhs[2]);
+		uint32_t order = maGetUINT32Element(prhs[0], 0);
+		uint32_t seed = maGetUINT32Element(prhs[1], 0);
+		uint32_t kernel_order_minus_one = mxGetNumberOfElements(prhs[2]);
 
 		// there is probably a nice way to figure this out, but 
 		// i am just going to brute force it since it doesn't take very long
 		// and i am kinda tired.
 
-		unsigned long pattern = 1;
-		unsigned long current_order_minus_one = 1;
-		unsigned long reg1 = 1, reg2;
-		unsigned long size = 1 << order;
+		uint32_t pattern = 1;
+		uint32_t current_order_minus_one = 1;
+		uint32_t reg1 = 1, reg2;
+		uint32_t size = 1 << order;
 
 		long* deltas = new long[kernel_order_minus_one];
 		// shift everything forward so i won't have to cycle through the m-seq to search
@@ -60,17 +60,17 @@ void mexFunction(int nlhs, mxArray *plhs[],
 			deltas[i] -= min;
 
 		// bit counter! -- TODO: use permanent lookup table for this!
-		unsigned long* newbit = new unsigned long[size];
+		uint32_t* newbit = new uint32_t[size];
 		for (i = 0; i < size; i++)
 		{
-			unsigned long j;	
+			uint32_t j;	
 			newbit[i] = 0;
 			for (j = 0; j < order; j++)
 				newbit[i] += ((1<<j)&i) ? 1 : 0;
 			newbit[i] = (newbit[i] % 2) << (order - 1);
 		}
 
-		unsigned long outputmask = size - 1;	
+		uint32_t outputmask = size - 1;	
 
 		// use Sutter's generating register method
 		// see Sutter's section in (Marmarelis 1987, Vol I)
